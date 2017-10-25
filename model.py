@@ -9,6 +9,19 @@ class ToDoList():
         else:
             raise ValueError("Incorrect item type")
 
+    def delete_item(self, item):
+        self.todo_list.remove(item)
+
+    def __str__(self):
+
+        formatted_list = []
+        index = 1
+        for item in self.todo_list:
+            formatted_list.append(str(index) + ". " + item.__str__())
+            index += 1
+       
+        return "".join(formatted_list)
+
 
 class ToDoItem():
 
@@ -43,11 +56,21 @@ class ToDoItem():
             raise ValueError("Too long value")     
 
     def __str__(self):
-        return "Name: " + self.name + "\nDescription: " + self.description + "\nStatus: " + str(self.is_done)
+        return "Name: " + self.name + ", " + "Description: " + self.description + ", " + "Status: " + str(self.is_done) + "\n"
 
-item = ToDoItem("Zrobić zakupy", "Lista zakupów: pomidor, chleb")
-print(item)
+item1 = ToDoItem("Zrobić zakupy", "Lista zakupów: pomidor, chleb")
+item2 = ToDoItem("Posprzątać", "Pokój")
+#print(item1)
 #print(ToDoItem.modify_name("Pranie", 20))
 #print(ToDoItem.check_value("Zrobić zakupy", 20))
 #print(ToDoItem.modify_name(item, "Pranie"))
 #print(ToDoItem.modify_description(item, "Blalalalalalallalala"))
+
+todo_list = ToDoList()
+#print(todo_list)
+todo_list.add_item(item1)
+todo_list.add_item(item2)
+print(todo_list)
+
+todo_list.delete_item(item1)
+print(todo_list)
