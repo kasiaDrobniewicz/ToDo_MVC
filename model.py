@@ -48,6 +48,9 @@ class ToDoItem():
             self.description = description
         return description
 
+    def mark_item_as_done(self):
+        self.is_done = True
+
     @classmethod    
     def check_value(cls, value, length):
         if len(value) <= length:
@@ -72,5 +75,7 @@ todo_list.add_item(item1)
 todo_list.add_item(item2)
 print(todo_list)
 
-todo_list.delete_item(item1)
-print(todo_list)
+#todo_list.delete_item(item1)
+#print(todo_list)
+item1.mark_item_as_done()
+print(item1)
