@@ -28,11 +28,11 @@ class ToDoItem():
     def __init__(self, name, description, is_done=False):
         
         NAME_LENGTH = 20
-        DESTRIPCTION_LENGTH = 150
+        DESCRIPTION_LENGTH = 150
 
         if ToDoItem.check_value(name, NAME_LENGTH):
             self.name = name
-        if ToDoItem.check_value(description, DESTRIPCTION_LENGTH):
+        if ToDoItem.check_value(description, DESCRIPTION_LENGTH):
             self.description = description
         self.is_done = is_done
 
@@ -43,8 +43,8 @@ class ToDoItem():
         return name
 
     def modify_description(self, description):
-        DESTRIPCTION_LENGTH = 150
-        if ToDoItem.check_value(description, DESTRIPCTION_LENGTH):
+        DESCRIPTION_LENGTH = 150
+        if ToDoItem.check_value(description, DESCRIPTION_LENGTH):
             self.description = description
         return description
 
