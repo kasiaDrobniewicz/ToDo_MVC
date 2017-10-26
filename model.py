@@ -9,15 +9,6 @@ class ToDoList():
         else:
             raise ValueError("Incorrect item type")
 
-    def display_items_list(self):
-        item_list = []
-        index = 0
-        for item in self.todo_list:
-            self.name = item.name
-            item_list.append(str(index) + ". " + str(self.name))
-            index += 1
-        return item_list
-
     def delete_item(self, id):
         self.todo_list.remove(self.todo_list[id])
 
@@ -83,7 +74,7 @@ todo_list = ToDoList()
 #print(todo_list)
 todo_list.add_item(item1)
 todo_list.add_item(item2)
-print(todo_list)
+#print(todo_list)
 
 #todo_list.delete_item(0)
 #print(todo_list)
