@@ -3,12 +3,12 @@ from model import ToDoList, ToDoItem
 
 
 def check_action():
+    FIRST_ACTION = 0
+    LAST_ACTION = 7
     while True:
         action = input("  Choose action:")
-        if action.isalpha():
-            print("Enter only digits") 
-        #elif action != 1:
-        #    print("There is no task with this number") 
+        if action.isalpha() or int(action) < FIRST_ACTION or int(action) > LAST_ACTION:
+            print("Enter only digits between " + str(FIRST_ACTION) + " and " + str(LAST_ACTION)) 
         else:
             return action
 
