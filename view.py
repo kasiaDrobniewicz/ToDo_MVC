@@ -17,8 +17,18 @@ def display_items_list(items_list):
         print (line)
         line = "| "
 
-test_list = [["1", "2"], ["3", "4"], ["3", "4", "5"]]
-display_items_list(test_list)
 
+'''def display_items_list_all(items_list):
+    index = 0
+    line = "| "
+    for item in items_list:
+        for element in item:
+            line = line + str(element) + " | "
+        print (line)
+        line = "| "'''
+
+        
+#test_list = [["1", "2"], ["3", "4"], ["3", "4", "5"]]
+#display_items_list(test_list)
 
 

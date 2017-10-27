@@ -81,6 +81,6 @@ todo_list.add_item(item2)
 #item1.mark_item_as_done()
 #print(item1)
 
-item_list = todo_list.display_items_list() 
+#item_list = todo_list.display_items_list() 
 
-print(item_list)
+#print(item_list)
