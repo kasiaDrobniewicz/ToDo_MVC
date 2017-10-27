@@ -24,33 +24,13 @@ def process_todolist(todo_list_obj):
     return items_list
 
 
-def process_todolist_all(todo_list_obj, id):
-    items_list_all = []
-    id_name_description = []
-    index = 0
-    for item in todo_list_obj.todo_list:
-        id_name_description = [index, item.name, item.description]
-        items_list_all.append(id_name_description)
-        index += 1
-        return items_list_all
-    for item in items_list_all:
-        id_item = item[index]
-        if id_item == id:
-            return item
+def process_todo(todo_list_obj, id):
+    attributes_list = [[]]
+    attributes_list[0].append(str(id))
+    attributes_list[0].append(todo_list_obj.todo_list[id].name)
+    attributes_list[0].append(todo_list_obj.todo_list[id].description)
 
-
-'''def process_todolist_all(todo_list_obj, id):
-    items_list_all = []
-    id_name_description = []
-    index = 0
-    for item in todo_list_obj.todo_list:
-        id_name_description = [index, item.name, item.description]
-        items_list_all.append(id_name_description)
-        index += 1
-        for item in items_list_all:
-            if index == id:
-                return id_name_description'''
-
+    return attributes_list
 
 
 def main():
@@ -73,12 +53,12 @@ def main():
             view.display_items_list(process_todolist(todo_list_obj))
             pass
         elif action == "6":
-            id = input("Enter the task number: ")
-            item = process_todolist_all(todo_list_obj, id)
-            print(item)
+            id = int(input("Enter the task number: "))
+            view.display_items_list(process_todo(todo_list_obj, id))
+            #item = process_todolist_all(todo_list_obj, id)
+            #print(item)
             #view.display_items_list(process_todolist_all(todo_list_obj, id))
             #view.display_items_list_all(process_todolist_all(todo_list_obj, id))
-            pass
         elif action == "7":
             exit()
 
