@@ -46,19 +46,18 @@ def main():
         elif action == "2":
             pass        
         elif action == "3":
-            pass
+            view.display_items_list(process_todolist(todo_list_obj))
+            id = int(input("Enter the task number which you wont to remove: ")) 
+            todo_list_obj.delete_item(id)
+            view.display_items_list(process_todolist(todo_list_obj))
         elif action == "4":
             pass
         elif action == "5":
             view.display_items_list(process_todolist(todo_list_obj))
             pass
         elif action == "6":
-            id = int(input("Enter the task number: "))
+            id = int(input("Enter the task number: "))   
             view.display_items_list(process_todo(todo_list_obj, id))
-            #item = process_todolist_all(todo_list_obj, id)
-            #print(item)
-            #view.display_items_list(process_todolist_all(todo_list_obj, id))
-            #view.display_items_list_all(process_todolist_all(todo_list_obj, id))
         elif action == "7":
             exit()
 
